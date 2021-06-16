@@ -34,7 +34,7 @@ public class StatsServiceImpl implements StatsService {
                 Stats stats = new Stats();
                 stats.setWord(entry.getKey());
                 stats.setEntry(entry.getValue());
-                stats.setRequestId(request);
+                stats.setRequest(request);
                 statsDAO.save(stats);
                 if (stats.getEntry() > 1) {
                     list.add(stats.getWord() + " - " + stats.getEntry());
@@ -43,7 +43,7 @@ public class StatsServiceImpl implements StatsService {
                     list.add(list.size(), "Unique:" + " - " + stats.getEntry());
                 }else if (count > 0) {
                     count++;
-                    list.set(list.size() -1, "Unique:" + " - " + count);
+                    list.set(list.size() -1, "Unique:" + " " + count);
                 }
             }
 
