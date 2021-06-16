@@ -1,5 +1,6 @@
 package org.example.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,10 +19,12 @@ public class Stats {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonIgnore
     private Integer id;
     private String word;
     private Integer entry;
+//    @Column(name = "request-id")
+    @JsonIgnore
     @ManyToOne(targetEntity = Request.class)
-    @Column(name = "request-id")
-    private Integer requestId;
+    private Request requestId;
 }
