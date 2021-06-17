@@ -46,7 +46,6 @@ public class StatsServiceImpl implements StatsService {
                     list.set(list.size() -1, "Unique:" + " " + count);
                 }
             }
-
         }
         return list;
     }
