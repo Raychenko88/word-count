@@ -18,11 +18,9 @@ public class Stats {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @JsonIgnore
     private Integer id;
     private String word;
     private Integer entry;
-    @JsonIgnore
     @ManyToOne(targetEntity = Request.class)
     private Request request;
 }
